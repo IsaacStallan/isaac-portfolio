@@ -18,7 +18,7 @@ export default {
     lastName: 'Stallan',
     role: 'Web designer & developer',
     location: 'Crows Nest, Sydney',
-    brands: ['Aretica', 'VALAIS & CO'],
+    brands: ['Aretica'],
   },
 
   intro: {
@@ -46,17 +46,6 @@ export default {
       alt: 'Aretica website hero: “JARVIS was fiction. This is the real thing.” on a dark, glowing interface',
       link: 'https://aretica.com.au',
       accent: '#22d3ee',
-    },
-    {
-      title: 'VALAIS & CO',
-      description: 'My own brand, designed and built in-house. Case study coming soon.',
-      role: 'Founder · Brand · Development',
-      tech: ['Brand', 'Web'],
-      image: 'images/work-valais.svg',
-      imageSmall: 'images/work-valais.svg',
-      alt: 'VALAIS & CO wordmark on a dark textured background',
-      link: null,
-      accent: '#e8d5b0',
     },
     {
       title: 'The Wooden Whisk',
@@ -87,7 +76,7 @@ export default {
   beforeAfter: {
     heading: 'From forgettable to unmissable.',
     before: { image: 'images/before.svg', alt: 'An outdated small-business website with clashing colours and cramped text' },
-    after: { image: 'images/after.svg', alt: 'The same business redesigned: a clean, modern, dark website with bold typography' },
+    after: { image: 'images/after.svg', alt: 'The same business redesigned: a clean, warm website with a clear headline, phone number, services list and a customer review' },
   },
 
   process: [
