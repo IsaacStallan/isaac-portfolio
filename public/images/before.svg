@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <rect width="1600" height="1000" fill="#d8d0b8"/>
+  <rect width="1600" height="150" fill="#1d3f8f"/>
+  <text x="60" y="95" font-family="Times New Roman,serif" font-size="64" font-style="italic" fill="#ffe500">Joe's Plumbing &amp; Gas!!!</text>
+  <text x="1080" y="90" font-family="Comic Sans MS,cursive" font-size="30" fill="#fff">Call NOW: 02 9xxx xxxx</text>
+  <rect y="150" width="1600" height="56" fill="#9c9c9c"/>
+  <g font-family="Arial,sans-serif" font-size="24" fill="#00e" text-decoration="underline">
+    <text x="60" y="187">Home</text><text x="170" y="187">About Us</text><text x="310" y="187">Services</text><text x="450" y="187">Gallery</text><text x="580" y="187">Contact</text><text x="710" y="187">Links</text>
+  </g>
+  <rect x="40" y="240" width="300" height="720" fill="#efe9d6" stroke="#777" stroke-width="2"/>
+  <text x="60" y="290" font-family="Times New Roman,serif" font-size="28" font-weight="bold" fill="#900">*** SPECIALS ***</text>
+  <g font-family="Times New Roman,serif" font-size="22" fill="#222"><text x="60" y="340">• Hot water units</text><text x="60" y="375">• Blocked drains</text><text x="60" y="410">• Gas fitting</text><text x="60" y="445">• Leaking taps</text></g>
+  <rect x="60" y="490" width="260" height="70" fill="#ff0" stroke="#f00" stroke-width="4"/>
+  <text x="190" y="535" text-anchor="middle" font-family="Comic Sans MS,cursive" font-size="26" fill="#f00">FREE QUOTE!!</text>
+  <text x="60" y="640" font-family="Arial,sans-serif" font-size="18" fill="#555">Visitors: 004213</text>
+  <text x="60" y="680" font-family="Arial,sans-serif" font-size="18" fill="#555">Best viewed in IE6</text>
+  <rect x="380" y="240" width="1180" height="420" fill="#8aa7c9"/>
+  <g stroke="#6b89ad" stroke-width="3"><line x1="380" y1="240" x2="1560" y2="660"/><line x1="1560" y1="240" x2="380" y2="660"/></g>
+  <text x="970" y="460" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" fill="#334">[ image not found ]</text>
+  <text x="380" y="720" font-family="Times New Roman,serif" font-size="44" fill="#1d3f8f" text-decoration="underline">Welcome to our website!!</text>
+  <g font-family="Times New Roman,serif" font-size="22" fill="#333">
+    <text x="380" y="770">We are a family owned business established many years ago providing quality service to</text>
+    <text x="380" y="802">the local area. Please click on the links on the left to find out more about our services and</text>
+    <text x="380" y="834">don't forget to sign our guestbook. This site is under construction, check back soon!!!</text>
+  </g>
+  <rect x="380" y="870" width="220" height="60" fill="#c0c0c0" stroke="#fff" stroke-width="3"/>
+  <text x="490" y="909" text-anchor="middle" font-family="Arial,sans-serif" font-size="22">Click Here</text>
+</svg>

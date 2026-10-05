@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900">
+  <defs><radialGradient id="a" cx="50%" cy="50%" r="60%"><stop offset="0" stop-color="#c8ff2e" stop-opacity=".18"/><stop offset="1" stop-color="#0a0a0b" stop-opacity="0"/></radialGradient></defs>
+  <rect width="1440" height="900" fill="#0f1011"/><rect width="1440" height="900" fill="url(#a)"/>
+  <rect x="220" y="140" width="1000" height="620" rx="24" fill="none" stroke="#c8ff2e" stroke-width="3" stroke-dasharray="14 14" stroke-opacity=".7"/>
+  <rect x="220" y="140" width="1000" height="56" rx="24" fill="#c8ff2e" fill-opacity=".06"/>
+  <g fill="#c8ff2e" fill-opacity=".5"><circle cx="258" cy="168" r="8"/><circle cx="286" cy="168" r="8"/><circle cx="314" cy="168" r="8"/></g>
+  <text x="720" y="480" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-weight="800" font-size="96" fill="#f4f4f0" letter-spacing="-3">yourbusiness</text>
+  <text x="720" y="560" text-anchor="middle" font-family="Helvetica Neue,Arial,sans-serif" font-size="32" fill="#c8ff2e" letter-spacing="6">.COM.AU</text>
+</svg>
