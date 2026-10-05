@@ -128,22 +128,19 @@ function processScene(desktop) {
   steps.forEach((s) => gsap.from(s, { opacity: 0.15, x: 24, ease: 'none', scrollTrigger: { trigger: s, start: 'top 85%', end: 'top 55%', scrub: true } }));
 }
 
+// Services scrolls normally (it's taller than one screen); its parts animate in as they arrive.
 function servicesScene(desktop) {
   const scene = $('#services');
-  const cards = $$('.service', scene);
-  if (desktop) {
-    // Reveal while the scene slides in, then hold it pinned with a little parallax.
-    const enter = { trigger: scene, start: 'top 85%', end: 'top top', scrub: 0.6 };
-    gsap.from('.services__head > *', { y: 60, opacity: 0, stagger: 0.08, ease: 'power2.out', scrollTrigger: enter });
-    gsap.from(cards, { y: 200, rotate: (i) => (i % 2 ? 5 : -5), opacity: 0, stagger: 0.15, ease: 'power2.out', scrollTrigger: { ...enter, start: 'top 70%' } });
-    const tl = pinned(scene, 0.8);
-    tl.to(cards, { y: (i) => (i % 2 ? -30 : -10) }).to('.services__head', { y: -20 }, 0);
-    return;
-  }
-  gsap.from(cards, {
-    y: 80, opacity: 0, stagger: 0.12, duration: 0.9, ease: 'power3.out',
-    scrollTrigger: { trigger: '.services__cards', start: 'top 85%', toggleActions: 'play none none reverse' },
-  });
+  const reveal = (targets, trigger, vars = {}) =>
+    gsap.from(targets, {
+      y: 70, opacity: 0, stagger: 0.12, ease: 'power2.out', ...vars,
+      scrollTrigger: { trigger, start: 'top 88%', end: 'top 45%', scrub: 0.6 },
+    });
+  reveal('.services__head > *', '.services__head');
+  reveal('.service--build', '.service--build');
+  reveal('.plans__heading', '.plans__heading');
+  reveal($$('.tier', scene), '.services__cards', desktop ? { y: 140, rotate: (i) => (i - 1) * 3 } : {});
+  reveal('.services__terms li', '.services__terms', { y: 20 });
 }
 
 function contactScene() {

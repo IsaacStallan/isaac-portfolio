@@ -12,6 +12,15 @@ export function initContactForm(onSuccess) {
     status.classList.toggle('is-error', error);
   };
 
+  // "Choose <plan>" buttons pre-fill the message so the enquiry names the plan.
+  document.querySelectorAll('[data-plan]').forEach((btn) =>
+    btn.addEventListener('click', () => {
+      const line = `I'm interested in the ${btn.dataset.plan}.`;
+      const msg = f.message.value.replace(/^I'm interested in the .*? plan \(.*?\)\.\n*/, '');
+      f.message.value = line + (msg ? '\n\n' + msg : '\n\n');
+    })
+  );
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const checks = [

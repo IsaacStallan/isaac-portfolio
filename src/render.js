@@ -111,13 +111,18 @@ export function renderBody(c) {
     )
     .join('');
 
-  const cards = services
+  const { build, plans } = services;
+  const points = (list) => `<ul class="service__points">${list.map((p) => `<li>${esc(p)}</li>`).join('')}</ul>`;
+  const tiers = plans
     .map(
-      (s) => `
-      <article class="service${s.featured ? ' service--featured' : ''}">
-        <h3 class="service__name">${esc(s.name)}</h3>
-        <p class="service__price"><span class="service__amount">${esc(s.price)}</span> <span class="service__unit">${esc(s.unit)}</span></p>
-        <ul class="service__points">${s.points.map((p) => `<li>${esc(p)}</li>`).join('')}</ul>
+      (p) => `
+      <article class="service tier${p.recommended ? ' tier--recommended' : ''}" aria-labelledby="plan-${esc(p.name.toLowerCase())}">
+        ${p.recommended ? '<p class="tier__badge">Recommended</p>' : ''}
+        <h4 class="service__name" id="plan-${esc(p.name.toLowerCase())}">${esc(p.name)}</h4>
+        <p class="service__price"><span class="service__amount">${esc(p.price)}</span><span class="service__unit">${esc(p.unit)}</span></p>
+        <p class="tier__intro">${esc(p.intro)}</p>
+        ${points(p.points)}
+        <a class="btn ${p.recommended ? 'btn--accent' : 'btn--line'} btn--sm tier__cta magnetic" href="#contact" data-plan="${esc(`${p.name} plan (${p.price}${p.unit})`)}" data-cursor="link"><span>Choose ${esc(p.name)}</span><span class="btn__arrow" aria-hidden="true">→</span></a>
       </article>`
     )
     .join('');
@@ -211,9 +216,18 @@ export function renderBody(c) {
         <div class="services__head">
           <p class="eyebrow">Services &amp; pricing</p>
           <h2 id="services-title">Simple, honest pricing.</h2>
-          <p class="services__sub">For local businesses across Sydney. Also building my own products under ${person.brands.map(esc).join(' and ')}.</p>
+          <p class="services__sub">${esc(services.sub)}</p>
         </div>
-        <div class="services__cards">${cards}</div>
+        <article class="service service--build" aria-labelledby="build-title">
+          <div>
+            <h3 class="service__name" id="build-title">${esc(build.name)}</h3>
+            <p class="service__price"><span class="service__amount">${esc(build.price)}</span> <span class="service__unit">${esc(build.unit)}</span></p>
+          </div>
+          ${points(build.points)}
+        </article>
+        <h3 class="plans__heading">${esc(services.plansHeading)}</h3>
+        <div class="services__cards">${tiers}</div>
+        <ul class="services__terms">${services.terms.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>
       </div>
     </section>
 

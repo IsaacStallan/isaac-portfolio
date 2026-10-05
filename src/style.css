@@ -194,24 +194,42 @@ em { font-style: normal; color: var(--accent); }
 .step__text { color: var(--muted); max-width: 32ch; }
 
 /* Services */
-.services__head { margin-bottom: 44px; }
-.services__sub { color: var(--muted); margin-top: 1.2rem; max-width: 52ch; }
-.services__cards { display: grid; gap: 20px; max-width: 1100px; }
+.services__inner { max-width: 1180px; }
+.services__head { margin-bottom: 32px; }
+.services__head h2 { font-size: clamp(2.2rem, 6vw, 4.4rem); }
+.services__sub { color: var(--muted); margin-top: 1rem; max-width: 56ch; }
 .service {
-  position: relative; padding: 32px 28px; border-radius: 22px; background: var(--bg-2); border: 1px solid var(--line); overflow: hidden;
+  position: relative; padding: 26px 24px; border-radius: 20px; background: var(--bg-2); border: 1px solid var(--line);
 }
-.service--featured { border-color: color-mix(in srgb, var(--accent) 50%, transparent); }
-.service--featured::before {
-  content: ""; position: absolute; inset: -40% -40% auto auto; width: 320px; height: 320px; border-radius: 50%;
-  background: radial-gradient(var(--accent), transparent 70%); opacity: .14; pointer-events: none;
+.service__name { font-size: 1.35rem; margin-bottom: .8rem; }
+.service__price { margin-bottom: 1rem; }
+.service__amount { font: 800 clamp(2.2rem, 5vw, 3rem)/1 var(--display); letter-spacing: -.03em; color: var(--fg); }
+.service__unit { color: var(--muted); margin-left: 4px; }
+.service__points { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: .94rem; }
+.service__points li { padding-left: 24px; position: relative; color: #d6d6d0; }
+.service__points li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); }
+
+.service--build { display: grid; gap: 16px; margin-bottom: 40px; }
+.service--build .service__price { margin: 0; }
+.service--build .service__amount { color: var(--accent); white-space: nowrap; }
+
+.plans__heading { font-size: clamp(1.5rem, 3.4vw, 2.2rem); margin-bottom: 20px; }
+.services__cards { display: grid; gap: 16px; }
+.tier { display: flex; flex-direction: column; }
+.tier__intro { font-size: .85rem; color: var(--muted); margin-bottom: .8rem; }
+.tier .service__points { margin-bottom: 24px; }
+.tier__cta { margin-top: auto; align-self: flex-start; }
+.tier--recommended { border-color: var(--accent); background: linear-gradient(var(--bg-2), var(--bg-2)) padding-box; box-shadow: 0 0 0 1px var(--accent); }
+.tier--recommended .service__amount { color: var(--accent); }
+.tier__badge {
+  position: absolute; top: -12px; left: 24px; padding: 5px 12px; border-radius: 999px;
+  background: var(--accent); color: var(--accent-ink); font: 700 .7rem/1 var(--sans); letter-spacing: .14em; text-transform: uppercase;
 }
-.service__name { font-size: 1.5rem; margin-bottom: 1.2rem; }
-.service__price { margin-bottom: 1.6rem; }
-.service__amount { font: 800 clamp(2.6rem, 6vw, 4rem)/1 var(--display); letter-spacing: -.03em; color: var(--accent); }
-.service__unit { color: var(--muted); }
-.service__points { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-.service__points li { padding-left: 26px; position: relative; color: #d6d6d0; }
-.service__points li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
+.services__terms {
+  list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 6px;
+  font-size: .82rem; color: var(--muted);
+}
+.services__terms li::before { content: "· "; color: var(--accent); }
 
 /* Contact */
 .scene--contact { padding-bottom: 32px; overflow: hidden; }
@@ -264,10 +282,13 @@ em { font-style: normal; color: var(--accent); }
 @media (min-width: 768px) {
   .work-card { grid-template-columns: 1.4fr 1fr; align-items: center; gap: 56px; }
   .work-card__media { order: 2; }
-  .services__cards { grid-template-columns: 1fr 1fr; }
+  .service--build { grid-template-columns: auto 1fr; gap: 48px; align-items: center; }
+  .service--build .service__points { grid-template-columns: 1fr 1fr; }
+  .services__terms { grid-template-columns: 1fr 1fr; column-gap: 32px; }
   .contact__grid { grid-template-columns: 1fr 1.1fr; align-items: start; }
 }
 @media (min-width: 1024px) {
+  .services__cards { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
   .process__steps { grid-template-columns: repeat(4, 1fr); padding: 0; gap: 32px; }
   .process__steps::before, .process__steps::after, .step::before { display: none; }
   .process__path { display: block; height: 120px; margin: 0 0 40px; }
